@@ -2514,7 +2514,7 @@ ul {
   background-size: 46%;
   bottom: -74px;
   z-index: -1;
-  background: url(../img/banner_bg.png) top right no-repeat;
+  background: url(../img/banner_bg-1.png) top right no-repeat;
 }
 
 @media (max-width: 575px) {
