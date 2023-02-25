@@ -8,19 +8,19 @@
                         <p>Take control of your legal matters with SELF REP. Our user-friendly app provides expert tips and guidance for self-representation, empowering you to navigate the legal system with confidence and achieve the best possible outcome.</p>
                     </div>
                 </div>
+                {% if services %}
                 <div class="col-sm-6 col-xl-3">
                     <div class="single-footer-widget">
                         <h4>Our Service</h4>
                         <ul>
-                            <li><a>Car accident</a></li>
-                            <li><a>Personal injury</a></li>
-                            <li><a>Family law</a></li>
-                            <li><a>Bank and financial</a></li>
-                            <li><a>Capital market</a></li>
+                            {% for service in services %}
+                                <li><a>{{ service.title }}</a></li>
+                            {% endfor %}
                         </ul>
 
                     </div>
                 </div>
+                {% endif %}
                 <div class="col-sm-6 col-xl-3">
                     <div class="single-footer-widget footer_icon">
                         <h4>Contact Info</h4>

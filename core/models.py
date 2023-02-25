@@ -1,5 +1,8 @@
 from django.db import models
 from django.urls import reverse
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Service(models.Model):
@@ -21,7 +24,7 @@ class Service(models.Model):
     
 
 class Team(models.Model):
-    user = models.OneToOneField('auth.User', on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     role = models.CharField(max_length=200)
     image = models.ImageField(upload_to='team/')
     created = models.DateTimeField(auto_now_add=True)
@@ -46,4 +49,33 @@ class Contact(models.Model):
     def __str__(self):
         return self.name
 
+
+GENDER_CHOICES = (
+    ('male', 'male'),
+    ('female', 'female'),
+    ('other', 'other')
+)
+USER_TYPE_CHOICES = (
+    ('normal', 'normal'),
+    ('advocate', 'advocate'),
+)
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user_type = models.CharField(max_length=10, choices=USER_TYPE_CHOICES, default='normal')
+    gender = models.CharField(max_length=10, choices=GENDER_CHOICES, default='male')
+    position = models.CharField(max_length=200, blank=True, null=True)
+    #social media links
+    skype = models.URLField(max_length=200, blank=True, null=True)
+    twitter = models.URLField(max_length=200, blank=True, null=True)
+    instagram = models.URLField(max_length=200, blank=True, null=True)
+    created = models.DateField(auto_now=True)
+    updated = models.DateField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return self.user.username
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
 

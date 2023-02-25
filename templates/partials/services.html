@@ -1,0 +1,28 @@
+    <!-- servicing start-->
+    <section class="single_service section_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 col-sm-10">
+                    <div class="section_tittle">
+                        <h2>Practice Area</h2>
+                    </div>
+                </div>
+            </div>
+            {% if services %}
+            <div class="row justify-content-between">
+                {% for service in services %}
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_single_service">
+                        <img src="{% if service.image %}{{ service.image.url }}{% else %}/static/img/icon/service_1.svg{% endif %}" alt="{{ service }}">
+                        <h4>{{ service.title }}</h4>
+                        <p>{{ service.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+                <p>No Services</p>
+            {% endif %}
+        </div>
+    </section>
+    <!-- servicing end-->

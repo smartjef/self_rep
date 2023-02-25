@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contact, Service, Team
+from .models import Contact, Service, Team, Profile
 # Register your models here.
 
 @admin.register(Service)
@@ -20,3 +20,9 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = ['name', 'email', 'subject', 'message', 'created']
     list_filter = ['created']
     search_fields = ['name', 'email', 'subject', 'message']
+
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ['user', 'gender', 'user_type','position', 'skype', 'twitter', 'instagram',  'created', 'updated']
+    list_filter = ['created', 'updated']
+    search_fields = ['user__username', 'user__email', 'gender', 'position', 'user_type',]

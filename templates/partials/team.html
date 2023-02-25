@@ -1,3 +1,4 @@
+    {% if teams %}
     <!-- team_part part start-->
     <section class="team_part our_offer section_bg section_padding">
         <div class="container">
@@ -10,66 +11,35 @@
                 </div>
             </div>
             <div class="row justify-content-between">
+                {% for team in teams %}
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_offer_part">
                         <div class="single_offer">
-                            <img src="/static/img/team/team_member_1.png" alt="offer_img_1">
+                            <img src="{{ team.image.url }}" alt="offer_img_1">
                             <div class="hover_text">
-                                <p>jevenmartyn@ariclaw.com</p>
+                                <p>{{ team.user.email|default:'No Email found'}}</p>
                                 <div class="team_social_icon">
-                                    <a href="#"> <span class="ti-twitter"></span> </a>
-                                    <a href="#"> <span class="ti-skype"></span> </a>
-                                    <a href="#"> <span class="ti-instagram"></span> </a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="team_member_info">
-                            <h4>Stephen Hockin</h4>
-                            <p>Crime Lawyer</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_offer_part">
-                        <div class="single_offer">
-                            <img src="/static/img/team/team_member_2.png" alt="offer_img_1">
-                            <div class="hover_text">
-                                <p>jevenmartyn@ariclaw.com</p>
-                                <div class="team_social_icon">
-                                    <a href="#"> <span class="ti-twitter"></span> </a>
-                                    <a href="#"> <span class="ti-skype"></span> </a>
-                                    <a href="#"> <span class="ti-instagram"></span> </a>
+                                    {% if team.user.profile.twitter %}
+                                        <a href="{{ team.user.profile.twitter }}"> <span class="ti-twitter"></span> </a>
+                                    {% endif %}
+                                    {% if team.user.profile.skype %}
+                                        <a href="{{ team.user.profile.skype }}"> <span class="ti-skype"></span> </a>
+                                    {% endif %}
+                                    {% if team.user.profile.instagram %}
+                                        <a href="{{ team.user.profile.instagram }}"> <span class="ti-instagram"></span> </a>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
                         <div class="team_member_info">
-                            <h4>Jeven Martyn</h4>
-                            <p>Finance Lawyer</p>
+                            <h4>{{ team.user.get_full_name|default:'No Name found'}}</h4>
+                            <p>{{ team.role}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_offer_part">
-                        <div class="single_offer">
-                            <img src="/static/img/team/team_member_3.png" alt="offer_img_1">
-                            <div class="hover_text">
-                                <p>jevenmartyn@ariclaw.com</p>
-                                <div class="team_social_icon">
-                                    <a href="#"> <span class="ti-twitter"></span> </a>
-                                    <a href="#"> <span class="ti-skype"></span> </a>
-                                    <a href="#"> <span class="ti-instagram"></span> </a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="team_member_info">
-                            <h4>Donald Tisar</h4>
-                            <p>Crime Lawyer</p>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
     <!-- team_part part end-->
+{% endif %}

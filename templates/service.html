@@ -1,67 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <!-- servicing start-->
-    <section class="single_service section_padding">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-7 col-sm-10">
-                    <div class="section_tittle">
-                        <h2>Our Services</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-between">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_single_service">
-                        <img src="/static/img/icon/service_1.svg" alt="#">
-                        <h4>Banking & Finance</h4>
-                        <p>After creeping two life sea green which face yielding gat ered was after
-                            also upon blessed under whose abdantly one very to let his</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_single_service">
-                        <img src="/static/img/icon/service_2.svg" alt="#">
-                        <h4>Family Law</h4>
-                        <p>After creeping two life sea green which face yielding gat ered was after
-                            also upon blessed under whose abdantly one very to let his</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_single_service">
-                        <img src="/static/img/icon/service_3.svg" alt="#">
-                        <h4>Insurance Law</h4>
-                        <p>After creeping two life sea green which face yielding gat ered was after
-                            also upon blessed under whose abdantly one very to let his</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_single_service">
-                        <img src="/static/img/icon/service_4.svg" alt="#">
-                        <h4>Ecommerce Law</h4>
-                        <p>After creeping two life sea green which face yielding gat ered was after
-                            also upon blessed under whose abdantly one very to let his</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_single_service">
-                        <img src="/static/img/icon/service_5.svg" alt="#">
-                        <h4>Crime Law</h4>
-                        <p>After creeping two life sea green which face yielding gat ered was after
-                            also upon blessed under whose abdantly one very to let his</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_single_service">
-                        <img src="/static/img/icon/service_6.svg" alt="#">
-                        <h4>Banking & Finance</h4>
-                        <p>After creeping two life sea green which face yielding gat ered was after
-                            also upon blessed under whose abdantly one very to let his</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- servicing end-->
+    {% include 'partials/services.html' %}
+    {% include 'partials/ads.html' %}
 {% endblock %}

@@ -1,182 +1,75 @@
 {% extends 'base.html' %}
 {% block content %}
-    <!-- banner part start-->
-    <section class="banner_part">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="banner_text">
-                        <div class="banner_text_iner">
-                            <h1>Finest And <br>
-                                Strongest Law <br>
-                                Firm Win The World</h1>
-                            <p>Subdue which man creeping was image you dry lesser every live our be gree male
-                                may living beginning appear moveth beast </p>
-                            <div class="banner_btn">
-                                <a href="#" class="btn_1">More About Us</a>
-                            </div>
+<!-- banner part start-->
+<section class="banner_part">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="banner_text">
+                    <div class="banner_text_iner">
+                        <h1>Justice Mtaani <br>ensures justice for all.</h1>
+                        <p>
+                            We aim to corporate the idea of Self representation and to suggest the best advocate for
+                            your case. For your self representation, we ensure that you know how to prepare your case,
+                            how to file your new case in court and how you will be addressing the court when you
+                            represent yourself. </p>
+                        <div class="banner_btn">
+                            <a href="{% url 'about' %}" class="btn_1">More About Us</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- banner part start-->
-
-    <!-- about part start-->
-    <section class="about_part section_padding">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section_tittle text-center">
-                        <h2>The lawyers truth is not truth but consistency
-                            or a consistent expediency</h2>
+    </div>
+</section>
+<!-- banner part start-->
+{% include 'partials/about.html' %}
+<!-- Service part start-->
+<section class="service_part section_padding">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-3 col-sm-6">
+                <div class="single_service_part">
+                    <div class="single_service_text">
+                        <span class="flaticon-law"></span>
+                        <h2>Get Law Advice</h2>
+                        <p>Over their the abund every placed thing them them winged you beginning forth</p>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-7 col-sm-7">
-                    <div class="about_part_img">
-                        <img src="img/about_1.png" alt="#">
-                    </div>
-                </div>
-                <div class="col-lg-5 col-sm-5 d-none d-sm-block">
-                    <div class="about_part_img">
-                        <img src="img/about_2.png" alt="#">
+            <div class="col-lg-3 col-sm-6">
+                <div class="single_service_part">
+                    <div class="single_service_text">
+                        <span class="flaticon-scale"></span>
+                        <h2>Review The Case</h2>
+                        <p>Over their the abund every placed thing them them winged you beginning forth</p>
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="about_text text-center">
-                        <p>Fly seed a it hath own light deep our meat land bearing won bring you two
-                            were together divide set kind stars firmament evning from forth seas let
-                            air whales which of gathering be sixth. Seed won't. Creature she'd living
-                            said blessed. Rule plac also seasons was itself of for days subdue
-                            great own male itsel</p>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single_service_part">
+                    <div class="single_service_text">
+                        <span class="flaticon-siren"></span>
+                        <h2>Winning Guarantee</h2>
+                        <p>Over their the abund every placed thing them them winged you beginning forth</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- about part end-->
-
-    <!-- Service part start-->
-    <section class="service_part section_padding">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single_service_part">
-                        <div class="single_service_text">
-                            <span class="flaticon-law"></span>
-                            <h2>Get Law Advice</h2>
-                            <p>Over their the abund every placed thing them them winged you beginning forth</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single_service_part">
-                        <div class="single_service_text">
-                            <span class="flaticon-scale"></span>
-                            <h2>Review The Case</h2>
-                            <p>Over their the abund every placed thing them them winged you beginning forth</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single_service_part">
-                        <div class="single_service_text">
-                            <span class="flaticon-siren"></span>
-                            <h2>Winning Guarantee</h2>
-                            <p>Over their the abund every placed thing them them winged you beginning forth</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single_service_part">
-                        <div class="single_service_text">
-                            <span class="flaticon-policeman"></span>
-                            <h2>Fully Suppport</h2>
-                            <p>Over their the abund every placed thing them them winged you beginning forth</p>
-                        </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single_service_part">
+                    <div class="single_service_text">
+                        <span class="flaticon-policeman"></span>
+                        <h2>Fully Suppport</h2>
+                        <p>Over their the abund every placed thing them them winged you beginning forth</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Service part end-->
-
-    <!-- our_offer part start-->
-    <section class="our_offer case_study section_padding">
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-lg-5 col-sm-10">
-                    <div class="section_tittle">
-                        <h2>Recent Case Study</h2>
-                        <p>Over their the abundantly every midst place thing them them winged you're
-                            beginning forth you. Fruit seas very does can after herb moved so was Kind </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-between">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_offer_part">
-                        <div class="single_offer">
-                            <img src="img/offer_img_1.png" alt="offer_img_1">
-                            <div class="hover_text">
-                                <h2>RBanking & Finance</h2>
-                                <p>Bank Protected</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_offer_part">
-                        <div class="single_offer">
-                            <img src="img/offer_img_2.png" alt="offer_img_1">
-                            <div class="hover_text">
-                                <h2>RBanking & Finance</h2>
-                                <p>Bank Protected</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_offer_part">
-                        <div class="single_offer">
-                            <img src="img/offer_img_3.png" alt="offer_img_1">
-                            <div class="hover_text">
-                                <h2>RBanking & Finance</h2>
-                                <p>Bank Protected</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- our_offer part end-->
-
-    {% include 'partials/team.html' %}
-
-    <!-- cta_part part start-->
-    <section class="cta_area">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="cta_text">
-                        <h2>Empowering self-representation. Take control of your legal matters with the help of our user-friendly app.</h2>
-                        {% if user.is_authenticated %}
-                            <a href="{% url 'contact' %}" class="cta_btn">Learn More</a>
-                        {% else %}
-                            <a href="{% url 'account_login' %}" class="cta_btn">Login</a>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- cta_part part end-->
+    </div>
+</section>
+<!-- Service part end-->
+{% include 'partials/services.html' %}
+{% include 'partials/team.html' %}
+{% include 'partials/ads.html' %}
 
 {% endblock %}
-  
