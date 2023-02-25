@@ -7,7 +7,7 @@
 {% block content %}
 <h1>{% trans "Sign Up As Advocate" %}</h1>
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>. OR you can sign up for a {% endblocktrans %}<a href="{% url 'account_signup' %}">Normal Account</a></p>
+<p>Already have an account? Then please <a href="{% url 'account_login' %}">sign in</a>. OR you can sign up for a <a href="{% url 'account_signup' %}">Normal Account</a></p>
 
 
 
