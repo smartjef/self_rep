@@ -18,10 +18,10 @@
     {% endblock %}
     {% include 'partials/footer.html' %}
     {% include 'partials/js.html' %}
-
+    {% if user.is_authenticated %}
     <script src='//fw-cdn.com/2639186/3079828.js' chat='true'>
     </script>
-
+    {% endif %}
 </body>
 
 </html>
