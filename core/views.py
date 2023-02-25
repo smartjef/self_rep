@@ -50,3 +50,6 @@ def services(request):
         'services': services
     }
     return render(request, 'service.html', context)
+
+def register_advocate(request):
+    return render(request, 'account/register.html')

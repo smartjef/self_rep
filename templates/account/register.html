@@ -1,0 +1,14 @@
+{% extends "account/base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block head_title %}{% trans "Sign Up As Advocate" %}{% endblock %}
+
+{% block content %}
+<h1>{% trans "Sign Up As Advocate" %}</h1>
+
+<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>. OR you can sign up for a {% endblocktrans %}<a href="{% url 'account_signup' %}">Normal Account</a></p>
+
+
+
+{% endblock %}
