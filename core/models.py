@@ -4,6 +4,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.contrib.auth.models import User
 
+
 # Create your models here.
 class Service(models.Model):
     title = models.CharField(max_length=200)
@@ -21,7 +22,7 @@ class Service(models.Model):
 
     def get_absolute_url(self):
         return reverse('service_detail', kwargs={'slug': self.slug})
-    
+
 
 class Team(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -43,6 +44,7 @@ class Contact(models.Model):
     subject = models.CharField(max_length=200)
     message = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
+
     class Meta:
         ordering = ['-created']
 
@@ -59,12 +61,14 @@ USER_TYPE_CHOICES = (
     ('normal', 'normal'),
     ('advocate', 'advocate'),
 )
+
+
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     user_type = models.CharField(max_length=10, choices=USER_TYPE_CHOICES, default='normal')
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES, default='male')
     position = models.CharField(max_length=200, blank=True, null=True)
-    #social media links
+    # social media links
     skype = models.URLField(max_length=200, blank=True, null=True)
     twitter = models.URLField(max_length=200, blank=True, null=True)
     instagram = models.URLField(max_length=200, blank=True, null=True)
@@ -74,8 +78,4 @@ class Profile(models.Model):
     def __str__(self) -> str:
         return self.user.username
 
-@receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(user=instance)
 

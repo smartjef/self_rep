@@ -1,7 +1,11 @@
 from django.db import IntegrityError
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Contact, Service, Team
+
+from .models import Contact, Service, Team, Profile
+from allauth.account.views import SignupView
+
+
 # Create your views here.
 def index(request):
     services = Service.objects.all()
@@ -13,6 +17,7 @@ def index(request):
     }
     return render(request, 'index.html', context)
 
+
 def about(request):
     services = Service.objects.all()
     teams = Team.objects.all()
@@ -22,6 +27,7 @@ def about(request):
         'teams': teams
     }
     return render(request, 'about.html', context)
+
 
 def contact(request):
     if request.method == 'POST':
@@ -43,6 +49,7 @@ def contact(request):
     }
     return render(request, 'contact.html', context)
 
+
 def services(request):
     services = Service.objects.all()
     context = {
@@ -51,5 +58,19 @@ def services(request):
     }
     return render(request, 'service.html', context)
 
-def register_advocate(request):
-    return render(request, 'account/register.html')
+
+class AdvocateSignUpView(SignupView):
+    template_name = 'account/register.html'
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        Profile.objects.create(user=self.user, user_type="advocate")
+        # TODO ADD POSITION
+        return response
+
+
+class NormalSignUpView(SignupView):
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        Profile.objects.create(user=self.user)
+        return response
