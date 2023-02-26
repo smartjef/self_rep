@@ -70,6 +70,7 @@ class AdvocateSignUpView(SignupView):
 
 
 class NormalSignUpView(SignupView):
+
     def form_valid(self, form):
         response = super().form_valid(form)
         Profile.objects.create(user=self.user)
