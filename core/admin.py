@@ -23,6 +23,6 @@ class ContactAdmin(admin.ModelAdmin):
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
-    list_display = ['user', 'gender', 'user_type','position', 'skype', 'twitter', 'instagram',  'created', 'updated']
+    list_display = ['user', 'gender', 'user_type','field', 'skype', 'twitter', 'instagram',  'created', 'updated']
     list_filter = ['created', 'updated']
-    search_fields = ['user__username', 'user__email', 'gender', 'position', 'user_type',]
+    search_fields = ['user__username', 'user__email', 'gender', 'field', 'user_type',]
