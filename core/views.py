@@ -2,6 +2,7 @@ from django.db import IntegrityError
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
+from .forms import AdvocateSignUpForm
 from .models import Contact, Service, Team, Profile
 from allauth.account.views import SignupView
 
@@ -61,11 +62,12 @@ def services(request):
 
 class AdvocateSignUpView(SignupView):
     template_name = 'account/register.html'
+    form_class = AdvocateSignUpForm
 
     def form_valid(self, form):
+        field = form.cleaned_data.get("field")
         response = super().form_valid(form)
-        Profile.objects.create(user=self.user, user_type="advocate")
-        # TODO ADD POSITION
+        Profile.objects.create(user=self.user, user_type="advocate", field=field)
         return response
 
 
