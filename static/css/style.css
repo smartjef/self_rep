@@ -2458,7 +2458,7 @@ ul {
 .banner_part {
   height: 1000px;
   position: relative;
-  background-image: url(../img/banner_bg_1.png);
+  background-image: url(../img/test.jpeg);
   background-repeat: no-repeat;
   background-size: auto;
   background-position: left bottom;
@@ -2514,7 +2514,7 @@ ul {
   background-size: 46%;
   bottom: -74px;
   z-index: -1;
-  background: url(../img/banner_bg-1.png) top right no-repeat;
+  background: url(../img/test.jpeg) top right no-repeat;
 }
 
 @media (max-width: 575px) {
