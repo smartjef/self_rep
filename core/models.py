@@ -67,7 +67,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     user_type = models.CharField(max_length=10, choices=USER_TYPE_CHOICES, default='normal')
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES, default='male')
-    position = models.CharField(max_length=200, blank=True, null=True)
+    field = models.CharField(max_length=200, blank=True, null=True)
     # social media links
     skype = models.URLField(max_length=200, blank=True, null=True)
     twitter = models.URLField(max_length=200, blank=True, null=True)
