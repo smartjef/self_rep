@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{% if title %}{{ title }} - {% endif %}Self Rep</title>
+    <title>{% if title %}{{ title }} - {% endif %}Justice Mtaani</title>
     {% include 'partials/css.html' %}
 </head>
 
@@ -14,9 +14,14 @@
     {% include 'partials/breadcrumb.html' %}
     {% include 'partials/message.html' %}
     {% block content %}
-    
+
     {% endblock %}
     {% include 'partials/footer.html' %}
     {% include 'partials/js.html' %}
+    {% if user.is_authenticated %}
+    <script src='//fw-cdn.com/2639186/3079828.js' chat='true'>
+    </script>
+    {% endif %}
 </body>
+
 </html>
